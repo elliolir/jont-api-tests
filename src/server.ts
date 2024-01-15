@@ -1,6 +1,9 @@
 import { app } from '@/app';
-import { CONFIG } from '@/services/config.service';
+import { PORT } from '@/services/config.service';
+import { initDataSource } from '@/data-source';
 
-app.listen(CONFIG.PORT, () => {
-  console.info(`Listening at ${CONFIG.PORT}`);
+initDataSource();
+
+app.listen(PORT, () => {
+  console.info(`Listening at ${PORT}`);
 })
