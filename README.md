@@ -1,9 +1,9 @@
 # ojst-api-tests
-PoC of OpenAPI, Jest, Supertest, and Testcontainers based API tests. 
+PoC of OpenAPI, Jest, Supertest, and Testcontainers based API tests.
 
-The idea behind this is to validate API with OpenAPI spec as a source of consumer data contract.
+The idea behind this is to validate API with OpenAPI spec as a source of consumer data contract as simple and as close as possible to the real app.
 
-As a result, it allows re-usage of the Swagger data (currently, schema definitions) in tests, 
+As a result, it allows re-usage of the Swagger data (currently, schema definitions) in tests,
 as well as validation of Swagger file against actual API responses (to keep Swagger up-to-date).
 
 ## Set up
