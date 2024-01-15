@@ -1,10 +1,10 @@
-import { PostgreSqlContainer, StartedPostgreSqlContainer } from '@testcontainers/postgresql';
+import {PostgreSqlContainer, StartedPostgreSqlContainer} from '@testcontainers/postgresql';
 import request from 'supertest';
 
 import '@/utils/matchers';
 
-import { app } from '@/app';
-import { mainDataSource } from "@/data-source";
+import {app} from '@/app';
+import {mainDataSource} from "@/data-source";
 import {getDBConfig} from "@/services/config.service";
 import fs from "fs";
 
@@ -54,7 +54,7 @@ describe('api tests', () => {
     it('POST - 200', async () => {
       const value = 'POST todo';
 
-      const response = await request(app).post('/todos').send({ value });
+      const response = await request(app).post('/todos').send({value});
 
       expect(response).toHaveStatusCode(201);
       expect(response.body).toMatchSchema(schemas.todo);
@@ -81,7 +81,7 @@ describe('api tests', () => {
     it('PATCH - 200', async () => {
       const value = 'PATCH Updated todo';
 
-      const response = await request(app).patch(`/todos/${PATCH_TODO_ID}`).send({ value });
+      const response = await request(app).patch(`/todos/${PATCH_TODO_ID}`).send({value});
 
       expect(response).toHaveStatusCode(200);
       expect(response.body).toMatchSchema(schemas.todo);
@@ -90,7 +90,7 @@ describe('api tests', () => {
     });
 
     it('PATCH - 404', async () => {
-      const response = await request(app).patch(`/todos/${NOT_FOUND_TODO_ID}`).send({ value: "shouldn't update" });
+      const response = await request(app).patch(`/todos/${NOT_FOUND_TODO_ID}`).send({value: "shouldn't update"});
 
       expect(response).toHaveStatusCode(404);
       expect(response.body).toMatchSchema(schemas.error);

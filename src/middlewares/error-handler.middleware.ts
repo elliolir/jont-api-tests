@@ -1,5 +1,5 @@
 import {ErrorRequestHandler} from "express";
-import { EntityNotFoundError } from 'typeorm';
+import {EntityNotFoundError} from 'typeorm';
 
 
 export const errorHandlerMiddleware: ErrorRequestHandler = (err, req, res, next) => {

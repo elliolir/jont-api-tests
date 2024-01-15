@@ -13,7 +13,7 @@ export interface DBParams {
 }
 
 const getDBConfig = (params?: DBParams): DataSourceOptions => {
-  const { host, port, username, password, dbname } = params ?? {};
+  const {host, port, username, password, dbname} = params ?? {};
 
   return {
     type: 'postgres',
@@ -29,4 +29,4 @@ const getDBConfig = (params?: DBParams): DataSourceOptions => {
   };
 };
 
-export { PORT, getDBConfig }
+export {PORT, getDBConfig}

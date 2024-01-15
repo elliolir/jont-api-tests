@@ -8,7 +8,7 @@ import {errorHandlerMiddleware} from "@/middlewares/error-handler.middleware";
 
 export const app = express();
 
-app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.json({limit: '50mb'}));
 
 app.use(todosRouter);
 

@@ -9,13 +9,13 @@ const doc = fs.readFileSync(path.resolve(__dirname, '../../openapi.yaml'), 'utf8
 const swagger = yaml.parse(doc);
 
 
-const ajv = new Ajv({ allErrors: true, strict: false });
+const ajv = new Ajv({allErrors: true, strict: false});
 addFormats(ajv);
 ajv.addSchema(swagger, 'swagger');
 
 const toMatchSchema = (data: unknown, schemaName: string) => {
   const pass = ajv.validate(schemaName, data);
-  const { errors } = ajv;
+  const {errors} = ajv;
 
   return {
     pass,
@@ -44,7 +44,7 @@ const toBeContentType = (response: request.Response, type: string) => {
 };
 
 const toHaveStatusCode = (response: request.Response, code: number) => {
-  const { status } = response;
+  const {status} = response;
   const pass = status === code;
 
   return {
@@ -64,7 +64,9 @@ declare global {
   namespace jest {
     interface Matchers<R> {
       toMatchSchema(schemaName: string): R;
+
       toBeContentType(type: string): R;
+
       toHaveStatusCode(code: number): R;
     }
   }

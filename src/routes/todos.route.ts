@@ -1,7 +1,7 @@
-import { Router } from 'express';
+import {Router} from 'express';
 
 import {Todo} from '@/entities/Todo';
-import { mainDataSource } from "@/data-source";
+import {mainDataSource} from "@/data-source";
 
 export const todosRouter = Router();
 
