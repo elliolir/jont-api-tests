@@ -1,0 +1,39 @@
+{
+  "name": "jont-api-tests",
+  "version": "1.0.0",
+  "description": "Jest, OpenAPI, Nock, and Testcontainers based API tests",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node --files ./src/server.ts",
+    "dev": "ts-node-dev ./src/server.ts",
+    "build": "tsc ./src/server.ts --traceResolution"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elliolir/jont-api-tests.git"
+  },
+  "keywords": [
+    "jest",
+    "openapi",
+    "swagger",
+    "nock",
+    "testcontainers"
+  ],
+  "author": "elliolir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elliolir/jont-api-tests/issues"
+  },
+  "homepage": "https://github.com/elliolir/jont-api-tests#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "reflect-metadata": "^0.2.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.3.3"
+  }
+}
