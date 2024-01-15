@@ -1,0 +1,1 @@
+INSERT INTO todo (value) VALUES ('GET test TODO'), ('PATCH test TODO');
