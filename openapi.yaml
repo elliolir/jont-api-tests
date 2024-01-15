@@ -1,0 +1,97 @@
+openapi: 3.0.3
+
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Readable error message
+        params:
+          type: object
+          description: Additional error parameters
+      required:
+        - message
+        - params
+
+    Todo:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: number
+        value:
+          type: string
+          example: RNA Expression
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        deletedAt:
+          type: string
+          format: date-time
+
+    Todos:
+      type: array
+      items:
+        $ref: '#/components/schemas/Todo'
+
+
+info:
+  title: Simple TODO API
+  version: 1.0.0
+
+paths:
+  /todos:
+    get:
+      summary: Get all Todos
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todos'
+    post:
+      summary: Save Todo
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+  /todos/:id:
+    get:
+      summary: Get Todo
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      summary: Update Todo
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
