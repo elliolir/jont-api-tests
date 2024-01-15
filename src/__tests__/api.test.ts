@@ -1,12 +1,12 @@
 import {PostgreSqlContainer, StartedPostgreSqlContainer} from '@testcontainers/postgresql';
 import request from 'supertest';
+import fs from "fs";
 
 import '@/utils/matchers';
 
 import {app} from '@/app';
 import {mainDataSource} from "@/data-source";
 import {getDBConfig} from "@/services/config.service";
-import fs from "fs";
 
 let container: StartedPostgreSqlContainer;
 
