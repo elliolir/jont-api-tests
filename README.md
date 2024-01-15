@@ -17,12 +17,12 @@ The rest of the npm scripts could be seen in the `package.json` file.
 
 ## Drawbacks
 Current implementation parses Open API spec and converts it into JSON Schema.
-However, OpenAPI might have  fields that are not supported by JSON Schema and vice versa. 
+However, OpenAPI might have  fields that are not supported by JSON Schema and vice versa.
 As a result, enabling some of the checks might be painful (e.g. schema composition and additional properties constraints).
 
 ## Further steps
 Ideally:
 - Swagger file should be generated automatically based on types;
-- Test cases should be dynamically initialized by Swagger's endpoint definitions and examples. 
+- Test cases should be dynamically initialized by Swagger's endpoint definitions and examples.
 
 Maybe someday.
