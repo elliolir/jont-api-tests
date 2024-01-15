@@ -13,7 +13,6 @@ components:
           description: Additional error parameters
       required:
         - message
-        - params
 
     Todo:
       type: object
@@ -33,6 +32,7 @@ components:
         deletedAt:
           type: string
           format: date-time
+          nullable: true
 
     Todos:
       type: array
@@ -58,7 +58,7 @@ paths:
     post:
       summary: Save Todo
       responses:
-        '200':
+        '201':
           description: Success
           content:
             application/json:
